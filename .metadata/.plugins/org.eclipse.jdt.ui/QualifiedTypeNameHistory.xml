@@ -13,7 +13,6 @@
     <fullyQualifiedTypeName name="org.springframework.context.event.ContextRefreshedEvent"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="br.com.senac.entity.Aluno"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
@@ -22,4 +21,10 @@
     <fullyQualifiedTypeName name="br.com.senac.service.AlunoService"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="org.apache.el.stream.Optional"/>
+    <fullyQualifiedTypeName name="org.hibernate.ObjectNotFoundException"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="br.com.senac.entity.Aluno"/>
 </qualifiedTypeNameHistroy>
