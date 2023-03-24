@@ -1,0 +1,25 @@
+package br.com.senac.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping
+public class ProfessorController {
+	
+	@Autowired
+	private ProfessorController professorService;
+	
+	@GetMapping("/listarProfessores")
+	public ModelAndView listaTodosProfessores() {
+		ModelAndView mv = new ModelAndView("aluno/paginaListaAlunos");
+		mv.addObject("alunos", professor.buscarTodosProfessores());
+		return mv;
+	}
+	
+	
+
+}

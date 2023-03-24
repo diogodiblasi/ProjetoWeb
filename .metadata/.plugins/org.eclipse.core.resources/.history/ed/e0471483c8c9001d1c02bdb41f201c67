@@ -1,0 +1,37 @@
+package br.com.senac.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.hibernate.ObjectNotFoundException;
+import org.springframework.stereotype.Service;
+
+import br.com.senac.entity.Aluno;
+import br.com.senac.entity.Professor;
+import br.com.senac.repository.ProfessorRepository;
+
+@Service
+public class ProfessorService {
+
+	ProfessorRepository repoProfessor;
+	
+	public List<Professor> buscarTodosProfessores(){
+		return repoProfessor.findAll();
+	}
+	public Professor salvar(Professor professor) {
+		return repoProfessor.save(professor);
+	}
+	
+	public Professor buscarPorID(Integer id)throws ObjectNotFoundException{
+		Optional<Professor> professor = repoProfessor.findById(id);
+		return professor.orElseThrow(() -> new ObjectNotFoundException(professor, "Professor nao encontrado. Id: " + id));
+	}
+	public Professor salvarAlteração(Professor alunoAlterado) throws ObjectNotFoundException {
+		Aluno aluno = buscaPorID(alunoAlterado.getId());
+		aluno.setId(alunoAlterado.getId());
+		aluno.setNome(alunoAlterado.getNome());
+		return salvar(aluno);
+	}
+	
+	
+}

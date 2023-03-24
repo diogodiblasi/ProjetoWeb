@@ -1,0 +1,6 @@
+package br.com.senac.service;
+
+@Service
+public class CursoService {
+
+}

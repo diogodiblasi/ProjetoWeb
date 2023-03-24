@@ -8,7 +8,13 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import br.com.senac.entity.Aluno;
+import br.com.senac.entity.Curso;
+import br.com.senac.entity.Professor;
+import br.com.senac.entity.Turma;
 import br.com.senac.service.AlunoService;
+import br.com.senac.service.CursoService;
+import br.com.senac.service.ProfessorService;
+import br.com.senac.service.TurmaService;
 
 
 @Component
@@ -16,6 +22,15 @@ public class Init implements ApplicationListener<ContextRefreshedEvent>{
 	
 	@Autowired
 	AlunoService alunoService;
+	
+	@Autowired
+	TurmaService turmaService;
+	
+	@Autowired
+	ProfessorService professorService;
+	
+	@Autowired
+	CursoService cursoService;
 	
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -37,6 +52,63 @@ public class Init implements ApplicationListener<ContextRefreshedEvent>{
 		for(Aluno aluno:listaAlunos) {
 			System.out.println(aluno.getNome());
 		}
+		
+		Turma turma1 = new Turma();
+		turma1.setTurma("Programação Web");
+		turmaService.salvar(turma1);
+		
+		Turma turma2 = new Turma();
+		turma2.setTurma("Banco de dados");
+		turmaService.salvar(turma2);
+		
+		Turma turma3 = new Turma();
+		turma3.setTurma("Projeto Integrador");
+		turmaService.salvar(turma3);
+		
+		List<Turma> listaTurmas = turmaService.buscarTodasTurmas();
+		
+		for(Turma aluno:listaTurmas) {
+			System.out.println(aluno.getTurma());
+		}
+		
+		Curso curso1 = new Curso();
+		curso1.setNome("Análise e Desenvolvimento de Sistemas");
+		cursoService.salvar(curso1);
+		
+		Turma curso2 = new Turma();
+		turma2.setTurma("Ciência de dados");
+		turmaService.salvar(curso2);
+		
+		Turma curso3 = new Turma();
+		turma3.setTurma("Power Bi");
+		turmaService.salvar(curso3);
+		
+		List<Curso> listaCursos = cursoService.buscarTodosCursos();
+		
+		for(Curso curso:listaCursos) {
+			System.out.println(curso.getNome());
+		}
+		
+		Professor professor1 = new Professor();
+		professor1.setNome("Carlos");
+		professorService.salvar(professor1);
+		
+		Professor professor2 = new Professor();
+		professor2.setNome("Eduardo");
+		professorService.salvar(professor2);
+		
+		Professor professor3 = new Professor();
+		professor3.setNome("Maicon");
+		professorService.salvar(professor3);
+		
+		List<Professor> listaProfessores = professorService.buscarTodosProfessores();
+		
+		for(Professor professor:listaProfessores) {
+			System.out.println(professor.getNome());
+		}
+		
+		
+		
 	}
 
 }

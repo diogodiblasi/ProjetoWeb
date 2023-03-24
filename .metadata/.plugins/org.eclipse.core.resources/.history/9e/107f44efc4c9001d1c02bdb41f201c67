@@ -1,0 +1,18 @@
+package br.com.senac.service;
+
+import org.springframework.stereotype.Service;
+
+import br.com.senac.repository.TurmaRepository;
+
+@Service
+public class TurmaService {
+	
+	@AutoWired
+	TurmaRepository repoTurma;
+	
+	public List<Turma> buscarTodasTurmas(){
+		return repoTurma.save(turma);
+	}
+	
+
+}
